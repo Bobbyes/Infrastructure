@@ -7,7 +7,10 @@
 **WARNING, PLEASE READ BEFORE UPGRADING**
 ---
 
-This ARM template will upgrade UiPath Orchestrator (WebApp - single/multi). You will need the following details:</br>
+Upgrading to a major version (eg: from 2019.4 to 2019.10) should be done only via PS script, as mentioned in here:
+https://docs.uipath.com/orchestrator/docs/updating-using-the-azure-script
+
+This ARM template will upgrade UiPath Orchestrator (WebApp - single/multi) and should be used ONLY to upgrade to a minor version (eg: from 2018.4.3 to 2018.4.6). You will need the following details:</br>
 * Web App name </br>
 * Service plan name </br>
 * Version to upgrade </br>
@@ -25,11 +28,6 @@ The backup will most likely not be used but nevertheless should be done.
 
 ## Upgrade
 
-* If upgrading to 19.10.xx, please connect to advanced tools (Kudu) and run the following command in the bin folder (site/wwwroot/bin):
-
-```cmd
-rm UiPath.Web*
-```
-* Restart the web app
+* DO NOT USE THE TEMPLATE TO UPGRADE to a Major version (ex: from 2019.4 to 2019.10)
 
 [![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FUiPath%2FInfrastructure%2Fmaster%2FAzure%2FOrchestrator%2FPaaS%2FUpgrade%2Forchupgrade.json)
